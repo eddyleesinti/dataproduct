@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/201224/eeb3bd1273d848039dfcb57db5e39032
+bundleId: https://api.rpubs.com/api/v1/document/201224/eeb3bd1273d848039dfcb57db5e39032
+url: http://rpubs.com/eddylee/201224
+when: 1470733427.94734

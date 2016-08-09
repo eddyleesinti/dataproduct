@@ -1,0 +1,58 @@
+---
+title       : Predicting Default App 
+subtitle    : Using Linear Discriminant Analysis
+author      : Eddy Lee
+job         : Credit Scoring
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Slide 1: Introduction
+
+This application provides a web interface to allow users to enter values for the selected  features in order to enable prediction using a trained LDA model.
+
+---
+## Slide 2: Train Data
+
+The German credit data set was obtained from the UCI Machine Learning Repository. The data set, which contains attributes and outcomes on 1000 loan applications, was provided in 1994 by Professor Dr. Hans Hofmann of the Institut fuer Statistik und Oekonometrie at the University of Hamburg. It has served as an important test data set for several credit-scoring algorithms. A description of the variables is given here.
+
+This app is only for presentation illustration purposes, thus proper validation and evaluation on the model is not done. 
+
+--- 
+## Slide 3: Input Features
+
+1. Amount 
+2. Installment
+3. Age
+4. Duration
+
+## Output Prediction
+
+1. Class (0 for Not Likely to Default, 1 for Likely to Default)
+
+---
+
+## Slide 4: R Code that build the model
+
+```{r, echo=TRUE, results="hide"}
+library(shiny)
+library(MASS)
+data<-read.csv("germancredit.csv")
+columns <- c("Default", "duration", "amount", "installment", "age")
+data <- data[, columns]
+#fitted <- lm(Default ~ ., data)
+lda1 <- lda(Default ~ ., data)
+```
+
+---
+## Slide 5: Access the Application
+
+To access the application, please go to https://eddylee.shinyapps.io/Coursework/
+
+Thank you.
+
+
